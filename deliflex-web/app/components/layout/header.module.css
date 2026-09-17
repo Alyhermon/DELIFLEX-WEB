@@ -1,0 +1,124 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem 0;
+  background: #ff6c25;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  gap: 40px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoText {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.active {
+  background: rgba(0, 0, 0, 0.18);
+  color: #fff;
+}
+
+.icon {
+  font-size: 15px;
+}
+
+.profileLink {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* No hay que soportar telefono/tablet aqui (el minimo de la web es
+   1280px de ventana), pero a los primeros anchos de laptop (1280-1360px)
+   el nav con 5 items + texto puede quedar justo - se aprieta el espaciado
+   en vez de esconder texto. */
+@media (max-width: 1360px) {
+  .nav {
+    gap: 0;
+  }
+
+  .link {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+}
+
+.searchRow {
+  padding-top: 1rem;
+  padding-bottom: 28px;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.searchIcon {
+  color: #ff6c25;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #333;
+}
+
+.searchInput::placeholder {
+  color: #999;
+}

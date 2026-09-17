@@ -1,0 +1,82 @@
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Igual que deliflex-admin: todavia no se diseño una version oscura del
+   sitio (tarjetas y fondos asumen texto oscuro sobre fondo claro), asi que
+   el modo oscuro del sistema no debe cambiar los colores por su cuenta -
+   si no, paginas sin un fondo explicito (como /buscar) heredan un fondo
+   negro con texto que ya viene oscuro por defecto. */
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  /* Esto es la version web (de escritorio) de la app movil, no un sitio
+     que tambien deba achicarse a telefono: 1280px es el ancho minimo de
+     ventana/laptop que se soporta - por debajo de eso se prefiere un
+     scroll horizontal a que todo se vea apretado o roto. */
+  min-width: 1280px;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Reset minimo: sin Tailwind ya no hay nada que quite el subrayado azul
+   por defecto de los links ni la fuente/cursor de los botones nativos. */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Ancho de contenido compartido por header, banner, categorias y el resto
+   de las secciones, para que todo quede centrado con el mismo margen a
+   los lados en vez de que cada componente invente su propio max-width.
+   Mas angosto que el minimo de 1280px de ventana a proposito: si fuera
+   igual, justo en esa ventana minima el contenido tocaria los bordes sin
+   dejar margen visible. */
+.page-container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 32px;
+  box-sizing: border-box;
+}
