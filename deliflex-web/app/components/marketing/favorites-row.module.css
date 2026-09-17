@@ -1,0 +1,9 @@
+.container {
+  padding-bottom: 24px;
+  text-align: center;
+}
+
+.empty {
+  color: #888;
+  font-size: 14px;
+}

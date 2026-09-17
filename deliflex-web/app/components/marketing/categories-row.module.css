@@ -1,0 +1,77 @@
+.container {
+  padding-top: 8px;
+  padding-bottom: 24px;
+}
+
+.scroll {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  width: 76px;
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #b81313;
+  color: #b81313;
+  font-size: 18px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.item:hover .circle {
+  background: #b81313;
+  color: #fff;
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #4b4946;
+  text-align: center;
+}
+
+.circleSkeleton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #eee;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+.labelSkeleton {
+  width: 50px;
+  height: 10px;
+  border-radius: 4px;
+  background: #eee;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    background-color: #eee;
+  }
+  50% {
+    background-color: #e2e2e2;
+  }
+}
