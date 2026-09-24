@@ -1,0 +1,53 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 140px;
+  padding: 28px 24px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.orange {
+  background: #fff1e6;
+}
+
+.blue {
+  background: #eaf1ff;
+}
+
+.pink {
+  background: #fdeaf1;
+}
+
+.iconCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+}
+
+.orange .iconCircle {
+  color: #d97706;
+}
+
+.blue .iconCircle {
+  color: #2563eb;
+}
+
+.pink .iconCircle {
+  color: #e0245e;
+}
+
+.message {
+  margin: 0;
+  color: #6b6b6b;
+  font-size: 14px;
+  max-width: 360px;
+}

@@ -1,5 +1,6 @@
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import SectionHeader from "./section-header";
+import EmptyStateBox from "./empty-state-box";
 import styles from "./favorites-row.module.css";
 
 // Mismo estado vacio que "Tus Favoritos" en la home de la app movil
@@ -10,7 +11,11 @@ export default function FavoritesRow() {
   return (
     <div className={`page-container ${styles.container}`}>
       <SectionHeader icon={faHeart} color="#e0245e" title="Tus Favoritos" />
-      <p className={styles.empty}>Aquí aparecen tus negocios favoritos.</p>
+      <EmptyStateBox
+        tone="pink"
+        icon={faHeart}
+        message="Aquí aparecen tus negocios favoritos."
+      />
     </div>
   );
 }
