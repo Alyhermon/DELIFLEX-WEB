@@ -163,11 +163,12 @@ export default function HeroBanner() {
               )}
 
               <div className={styles.content}>
-                <h1>{slide.title}</h1>
-                <p>{slide.subtitle}</p>
-                <Link href={slide.ctaHref} className={styles.button}>
-                  {slide.ctaLabel}
-                </Link>
+                <div className={styles.caption}>
+                  <h1>{slide.title}</h1>
+                  <Link href={slide.ctaHref} className={styles.button}>
+                    {slide.ctaLabel}
+                  </Link>
+                </div>
               </div>
             </div>
           );

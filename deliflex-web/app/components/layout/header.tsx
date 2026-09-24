@@ -6,6 +6,8 @@ import { useState } from "react";
 import styles from "./header.module.css";
 import { useAuth } from "@/app/hooks/useAuth";
 import LocationPicker from "./location-picker";
+import UserMenu from "./user-menu";
+import AuthModal from "@/app/components/auth/auth-modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
@@ -31,9 +33,7 @@ export default function Header() {
   const router = useRouter();
   const { user, loading } = useAuth();
   const [query, setQuery] = useState("");
-
-  const perfilHref = user ? "/cuenta" : "/core/login";
-  const isPerfilActive = pathname.startsWith("/cuenta") || pathname.startsWith("/core/login");
+  const [showAuthModal, setShowAuthModal] = useState(false);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -70,15 +70,18 @@ export default function Header() {
           })}
         </nav>
 
-        {!loading && (
-          <Link
-            href={perfilHref}
-            className={`${styles.link} ${styles.profileLink} ${isPerfilActive ? styles.active : ""}`}
+        {!loading && (user ? (
+          <UserMenu user={user} />
+        ) : (
+          <button
+            type="button"
+            onClick={() => setShowAuthModal(true)}
+            className={`${styles.link} ${styles.profileLink}`}
           >
             <FontAwesomeIcon icon={faUser} className={styles.icon} />
-            <span>{user ? "Mi perfil" : "Iniciar sesión"}</span>
-          </Link>
-        )}
+            <span>Iniciar sesión</span>
+          </button>
+        ))}
       </div>
 
       <div className={`page-container ${styles.searchRow}`}>
@@ -93,6 +96,8 @@ export default function Header() {
           />
         </form>
       </div>
+
+      {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} />}
     </header>
   );
 }

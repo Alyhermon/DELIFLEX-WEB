@@ -40,10 +40,17 @@
   object-fit: cover;
 }
 
+/* Solo oscurece una franja abajo (donde va el texto/boton) - el resto de
+   la foto queda totalmente visible, sin nada tapandola. */
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.55));
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.25) 30%,
+    rgba(0, 0, 0, 0) 55%
+  );
 }
 
 .badge {
@@ -59,43 +66,45 @@
   z-index: 3;
 }
 
+/* Minimalista a proposito: nada de caja ni blur tapando la foto, solo el
+   nombre del negocio y el boton, pegados abajo, apoyados en la franja
+   oscura del overlay para leerse bien. */
 .content {
   position: absolute;
   inset: 0;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 24px;
+  align-items: flex-end;
+  padding: 28px 32px;
   z-index: 2;
+}
+
+.caption {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .content h1 {
   color: #fff;
-  font-size: clamp(1.75rem, 4vw, 3rem);
-  font-weight: 800;
-  margin-bottom: 16px;
-}
-
-.content p {
-  max-width: 700px;
-  color: #fff;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  margin-bottom: 28px;
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
 }
 
 .button {
   display: inline-block;
+  flex-shrink: 0;
   border: none;
   cursor: pointer;
-  padding: 14px 28px;
-  border-radius: 12px;
+  padding: 10px 20px;
+  border-radius: 10px;
   background: #ff6c25;
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
+  white-space: nowrap;
   transition: transform 0.2s ease;
 }
 

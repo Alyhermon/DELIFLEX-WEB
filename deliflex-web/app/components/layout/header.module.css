@@ -72,6 +72,10 @@
 .profileLink {
   margin-left: auto;
   flex-shrink: 0;
+  background: none;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 /* No hay que soportar telefono/tablet aqui (el minimo de la web es
