@@ -8,6 +8,7 @@ import type { User } from "@/app/types/user";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGear,
+  faGift,
   faRightFromBracket,
   faLaptop,
   faMedal,
@@ -73,6 +74,11 @@ export default function UserMenu({ user }: { user: User }) {
             </span>
             <span className={styles.userEmail}>{user.email}</span>
           </div>
+
+          <Link href="/delipuntos" className={styles.item} onClick={() => setOpen(false)}>
+            <FontAwesomeIcon icon={faGift} className={styles.itemIcon} />
+            Mis DeliPuntos
+          </Link>
 
           <Link href="/cuenta" className={styles.item} onClick={() => setOpen(false)}>
             <FontAwesomeIcon icon={faGear} className={styles.itemIcon} />
