@@ -1,0 +1,175 @@
+.page {
+  flex: 1;
+  background: #f9f8f8;
+  padding: 32px 0 64px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  margin-bottom: 20px;
+  scrollbar-width: none;
+}
+
+.filters::-webkit-scrollbar {
+  display: none;
+}
+
+.filterButton {
+  flex-shrink: 0;
+  height: 40px;
+  padding: 0 20px;
+  border: 2px solid #b81313;
+  border-radius: 20px;
+  background: none;
+  color: #b81313;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.filterButtonActive {
+  background: #b81313;
+  color: #fff;
+}
+
+.empty {
+  text-align: center;
+  color: #848484;
+  margin-top: 40px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.storeImageWrap {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #eee;
+  flex-shrink: 0;
+}
+
+.storeImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.storeInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.storeName {
+  font-size: 15px;
+  font-weight: 700;
+  color: #060b67;
+}
+
+.orderDate {
+  font-size: 12px;
+  color: #848484;
+}
+
+.statusBadge {
+  flex-shrink: 0;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.divider {
+  height: 1px;
+  background: #f0f0f0;
+}
+
+.itemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.itemRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.itemImageWrap {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #eee;
+  flex-shrink: 0;
+}
+
+.itemImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.itemName {
+  flex: 1;
+  font-size: 13px;
+  color: #4b3636;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.itemPrice {
+  font-size: 13px;
+  font-weight: 700;
+  color: #4b3636;
+  flex-shrink: 0;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 700;
+  color: #4b3636;
+}
