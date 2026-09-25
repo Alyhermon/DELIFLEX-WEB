@@ -88,7 +88,7 @@ export default function CuentaPage() {
             </div>
           </Link>
 
-          <Link className={styles.statCard} href="/cuenta/delipuntos">
+          <Link className={styles.statCard} href="/delipuntos">
             <span className={styles.statIcon}>
               <FontAwesomeIcon icon={faStar} />
             </span>
