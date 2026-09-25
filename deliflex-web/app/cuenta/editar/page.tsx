@@ -5,6 +5,7 @@ import { useAuth } from "@/app/hooks/useAuth";
 import type { User } from "@/app/types/user";
 import DFInput from "@/app/components/components-items/input";
 import Toast from "@/app/components/components-items/toast/toast";
+import Breadcrumb from "@/app/components/layout/breadcrumb";
 import styles from "./editar.module.css";
 
 export default function EditarPerfilPage() {
@@ -109,6 +110,13 @@ function EditarPerfilForm({ user }: { user: User }) {
   return (
     <div className={styles.page}>
       <div className="page-container">
+        <Breadcrumb
+          items={[
+            { label: "Inicio", href: "/" },
+            { label: "Mi Perfil", href: "/cuenta" },
+            { label: "Editar Perfil" },
+          ]}
+        />
         <h1 className={styles.title}>Editar Perfil</h1>
 
         <div className={styles.card}>

@@ -11,6 +11,10 @@
   max-width: 28rem;
 }
 
+.breadcrumbWrap {
+  text-align: left;
+}
+
 .title {
   font-size: 1.875rem;
   font-weight: 600;
