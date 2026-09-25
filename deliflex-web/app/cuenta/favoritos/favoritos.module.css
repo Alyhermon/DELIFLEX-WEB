@@ -1,0 +1,84 @@
+.page {
+  flex: 1;
+  background: #f1f1f1;
+  padding: 32px 0 64px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+.empty {
+  text-align: center;
+  color: #848484;
+  margin-top: 40px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border-radius: 15px;
+  padding: 12px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.16);
+}
+
+.imageWrap {
+  position: relative;
+  width: 55px;
+  height: 55px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #eee;
+  flex-shrink: 0;
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #060b67;
+}
+
+.address {
+  font-size: 12px;
+  color: #848484;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.removeButton {
+  border: none;
+  background: none;
+  color: #b81313;
+  font-size: 18px;
+  padding: 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
