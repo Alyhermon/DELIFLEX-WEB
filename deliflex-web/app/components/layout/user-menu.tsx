@@ -3,12 +3,14 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import styles from "./user-menu.module.css";
+import { useCustomerProfile } from "@/app/hooks/useCustomerProfile";
 import type { User } from "@/app/types/user";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGear,
   faRightFromBracket,
   faLaptop,
+  faMedal,
 } from "@fortawesome/free-solid-svg-icons";
 
 const getInitials = (nombre: string) => {
@@ -18,7 +20,12 @@ const getInitials = (nombre: string) => {
   return (partes[0][0] + partes[1][0]).toUpperCase();
 };
 
+// Se pide el nivel aqui mismo (con useCustomerProfile, el mismo hook que
+// usa /cuenta) para que esa informacion se vea "desde el principio" - o
+// sea, apenas se abre el menu del header, sin tener que entrar a Mi Perfil
+// primero.
 export default function UserMenu({ user }: { user: User }) {
+  const { displayName, tierName, tierColor } = useCustomerProfile(user);
   const [open, setOpen] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
@@ -53,13 +60,17 @@ export default function UserMenu({ user }: { user: User }) {
         onClick={() => setOpen((v) => !v)}
         aria-label="Menú de cuenta"
       >
-        {getInitials(user.username || user.email)}
+        {getInitials(displayName)}
       </button>
 
       {open && (
         <div className={styles.dropdown}>
           <div className={styles.userInfo}>
-            <span className={styles.userName}>{user.username}</span>
+            <span className={styles.userName}>{displayName}</span>
+            <span className={styles.userTier} style={{ color: tierColor }}>
+              <FontAwesomeIcon icon={faMedal} />
+              Nivel {tierName}
+            </span>
             <span className={styles.userEmail}>{user.email}</span>
           </div>
 
