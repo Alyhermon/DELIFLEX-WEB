@@ -6,7 +6,6 @@
   color: #ef7808;
 }
 
-/* Para usarlo dentro de formularios, donde debe medir lo mismo que los inputs. */
 .fullWidth {
   max-width: none;
 }
