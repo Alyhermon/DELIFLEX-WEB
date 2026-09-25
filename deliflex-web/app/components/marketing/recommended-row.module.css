@@ -1,0 +1,36 @@
+.container {
+  padding-bottom: 24px;
+}
+
+.scroll {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.skeleton {
+  flex-shrink: 0;
+  width: 200px;
+  height: 190px;
+  border-radius: 12px;
+  background: #eee;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    background-color: #eee;
+  }
+  50% {
+    background-color: #e2e2e2;
+  }
+}
+
